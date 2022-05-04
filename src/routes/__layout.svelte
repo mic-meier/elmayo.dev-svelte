@@ -11,12 +11,15 @@
 <header class="pt-6 pb-2">
 	<nav class="max-w-prose lg:max-w-4xl mx-auto flex px-4 items-baseline justify-between">
 		<div>
-			<a class="text-2xl font-bold" href="/">El Mayo</a>
+			<a class="py-2 text-3xl font-bold " href="/">El Mayo</a>
 		</div>
 		<ul class="flex">
 			{#each links as link}
-				<li>
-					<a class="px-4 py-2 font-semibold" href={link.to}>{link.name}</a>
+				<li class="px-4 py-2 ">
+					<a
+						class="font-semibold border-b-4  border-purple-700 border-opacity-0 hover:border-purple-700 transition opacity-100 duration-300"
+						href={link.to}>{link.name}</a
+					>
 				</li>
 			{/each}
 			<li>
