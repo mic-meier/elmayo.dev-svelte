@@ -3,9 +3,15 @@ slug: 'testblog'
 title: 'Test the Layout'
 date: '2021-05-15'
 tagline: 'Designing the layout'
-published: false
+published: true
 layout: blog
 ---
+
+<script>
+import {BlogHeader} from "$lib"
+</script>
+
+<BlogHeader {title} {date} />
 
 ## Headers
 
