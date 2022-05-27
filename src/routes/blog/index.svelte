@@ -1,21 +1,7 @@
-<script context="module">
-	/** @type {import('./__types/index').Load} */
-	export async function load() {
-		const url = '/blog/posts.json'
-		const response = await fetch(url)
-
-		return {
-			status: response.status,
-			props: {
-				posts: response.ok && (await response.json())
-			}
-		}
-	}
-</script>
-
 <script lang="ts">
-	export let posts
-	let { blogPosts } = posts
+	import type { BlogPost } from '@src/types'
+
+	export let blogPosts: BlogPost[]
 </script>
 
 <svelte:head>

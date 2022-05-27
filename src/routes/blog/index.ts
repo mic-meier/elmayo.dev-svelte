@@ -2,7 +2,7 @@ import pMap from 'p-map'
 import { basename } from 'path'
 
 export async function get() {
-	const modules = import.meta.glob('./posts/*.svx')
+	const modules = import.meta.glob('/src/routes/blog/posts/*.svx')
 
 	const posts = await pMap(Object.entries(modules), async function ([filename, module]) {
 		const { metadata } = await module()

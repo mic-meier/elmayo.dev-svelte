@@ -2,7 +2,7 @@
 	"name": "elmayo.dev",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
+		"dev": "svelte-kit dev --host",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
@@ -23,6 +23,9 @@
 		]
 	},
 	"devDependencies": {
+		"@rgossiaux/svelte-headlessui": "^1.0.2",
+		"@steeze-ui/heroicons": "^1.1.1",
+		"@steeze-ui/svelte-icon": "^1.3.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "^0.5.2",
