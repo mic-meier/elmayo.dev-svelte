@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { MobileMenu } from '$lib'
-	import type { NavLink } from '@src/types'
+	import type { NavLink } from '@src/types';
+	
+	import { MobileMenu } from '$lib';
 
 	let links: NavLink[] = [
 		{ name: 'About', to: '/about' },
 		{ name: 'Blog', to: '/blog' },
-		{ name: 'Contact Me', to: '/contact' }
-	]
+		{ name: 'Contact Me', to: '/contact' },
+	];
 </script>
 
 <header class="pt-6 pb-12">

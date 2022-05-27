@@ -16,7 +16,9 @@
 		"baseUrl": "./",
 		"paths": {
 			"@src/*": ["src/*"],
-			"@routes/*": ["src/routes*"]
+			"@routes/*": ["src/routes*"],
+			"$lib":["src/lib"],
+			"$lib/*":["src/lib/*"]
 		}
 	},
 	"exclude": ["src/routes/blog/layout.svelte", "node_modules/*", "public/*"]

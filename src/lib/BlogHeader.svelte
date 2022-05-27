@@ -1,9 +1,9 @@
 <script lang="ts">
-	import format from 'date-fns/format/index.js'
-	export let title = 'Title'
-	export let date: Date = new Date()
+	import format from 'date-fns/format/index.js';
+	export let title: string;
+	export let date: Date = new Date();
 
-	let formattedDate = format(new Date(date), 'do MMM yyyy')
+	let formattedDate = format(new Date(date), 'do MMM yyyy');
 </script>
 
 <div class="mt-24">

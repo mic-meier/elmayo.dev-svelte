@@ -1,5 +1,9 @@
-<script>
-	export let title
+<script lang="ts">
+	import { BlogHeader, BlogImage } from '$lib';
+	export let title: string;
+	export let date: Date;
+	export let imgUrl: string;
+	export let imgAlt: string;
 </script>
 
 <svelte:head>
@@ -9,6 +13,8 @@
 
 <div>
 	<article class="prose">
+		<BlogHeader {title} {date} />
+		<BlogImage {imgUrl} {imgAlt} />
 		<slot />
 	</article>
 </div>

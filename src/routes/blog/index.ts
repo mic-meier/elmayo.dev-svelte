@@ -1,11 +1,11 @@
-import pMap from 'p-map'
-import { basename } from 'path'
+import pMap from 'p-map';
+import { basename } from 'path';
 
 export async function get() {
-	const modules = import.meta.glob('/src/routes/blog/posts/*.svx')
+	const modules = import.meta.glob('/src/routes/blog/posts/*.svx');
 
 	const posts = await pMap(Object.entries(modules), async function ([filename, module]) {
-		const { metadata } = await module()
+		const { metadata } = await module();
 
 		return {
 			slug: basename(filename, '.svx'),
@@ -13,21 +13,21 @@ export async function get() {
 			date: new Date(metadata.date),
 			tagline: metadata.tagline,
 			published: metadata.published,
-			layout: metadata.layout
-		}
-	})
+			layout: metadata.layout,
+		};
+	});
 
-	posts.sort((a, b) => (a.date > b.date ? -1 : 1))
+	posts.sort((a, b) => (a.date > b.date ? -1 : 1));
 
-	let blogPosts
+	let blogPosts;
 
 	if (process.env.NODE_ENV === 'production') {
-		blogPosts = posts.filter((post) => post.published === true)
+		blogPosts = posts.filter((post) => post.published === true);
 	} else {
-		blogPosts = posts
+		blogPosts = posts;
 	}
 
 	return {
-		body: { blogPosts }
-	}
+		body: { blogPosts },
+	};
 }
