@@ -1,0 +1,15 @@
+---
+title: 'Unpublished Blog'
+date: '2022-05-15'
+tagline: 'Designing the layout'
+published: false
+layout: blog
+---
+
+<script>
+import {BlogHeader} from "$lib"
+</script>
+
+<BlogHeader {title} {date} />
+
+## Headers
