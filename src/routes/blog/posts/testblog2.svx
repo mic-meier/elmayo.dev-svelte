@@ -6,6 +6,12 @@ published: true
 layout: blog
 ---
 
+<script>
+import {BlogHeader} from "$lib"
+</script>
+
+<BlogHeader {title} {date} />
+
 ## Headers
 
 ## This is an h2 tag

@@ -17,8 +17,6 @@ export async function get() {
 		}
 	})
 
-	console.log(process.env.NODE_ENV)
-
 	posts.sort((a, b) => (a.date > b.date ? -1 : 1))
 
 	let blogPosts
