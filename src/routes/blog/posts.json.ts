@@ -4,7 +4,7 @@ import { basename } from 'path'
 export async function get() {
 	const modules = import.meta.glob('./posts/*.svx')
 
-	const blogPosts = await pMap(Object.entries(modules), async function ([filename, module]) {
+	const posts = await pMap(Object.entries(modules), async function ([filename, module]) {
 		const { metadata } = await module()
 
 		return {
@@ -17,7 +17,17 @@ export async function get() {
 		}
 	})
 
-	blogPosts.sort((a, b) => (a.date > b.date ? -1 : 1))
+	console.log(process.env.NODE_ENV)
+
+	posts.sort((a, b) => (a.date > b.date ? -1 : 1))
+
+	let blogPosts
+
+	if (process.env.NODE_ENV === 'production') {
+		blogPosts = posts.filter((post) => post.published === true)
+	} else {
+		blogPosts = posts
+	}
 
 	return {
 		body: { blogPosts }

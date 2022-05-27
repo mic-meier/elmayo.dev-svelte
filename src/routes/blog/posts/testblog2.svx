@@ -1,9 +1,8 @@
 ---
-slug: 'testblog2'
-title: 'Test the Layout'
+title: 'Test Blog 2'
 date: '2022-05-15'
 tagline: 'Designing the layout'
-published: false
+published: true
 layout: blog
 ---
 
